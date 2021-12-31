@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\absenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('cobaa');
-});
+// Route::get('/', function () {
+//     return view('cobaa');
+// });
+
+Route::get('/', [absenController::class, 'index']);
+Route::get('/absen/{kelas:kelas}', [absenController::class, 'show']);
+Route::post('/absen', [absenController::class, 'input']);
+Route::get('/search', [absenController::class, 'search']);

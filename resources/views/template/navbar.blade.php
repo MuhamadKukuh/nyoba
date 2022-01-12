@@ -7,9 +7,9 @@
         </a>
        </li>
        <li class="nav-item">
-         <form action="/search" class="search-bar" method="get">
+         <form action="@if(auth()->user()) /search/recapt @else /search @endif" class="search-bar" method="get">
            <input type="text" class="form-control" placeholder="Enter keywords" name="search">
-            <button type="submit">Cari? pencet ini :v</button>
+            <button type="submit">Cari? pencet ini</button>
             <a href="javascript:void();"><i class="icon-magnifier"></i></a>
          </form>
        </li>

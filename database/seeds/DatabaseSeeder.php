@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+
+use App\User;
 use App\siswa;
 use App\kelas;
 use App\agama;
@@ -86,5 +89,12 @@ class DatabaseSeeder extends Seeder
         kelas::create([
             'kelas' => 'X-MM'
         ]);
+
+        User::create([
+            'name'  => "Guru",
+            "email" => "guru@gmail.com",
+            "password"  => Hash::make("password")
+        ]);
     }
+
 }

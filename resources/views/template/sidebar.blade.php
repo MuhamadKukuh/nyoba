@@ -5,6 +5,14 @@
       <h5 class="logo-text">Absen</h5>
     </a>
     </div>
+    @if (auth()->user())
+    <form action="/logout" method="post">
+      @csrf
+      <button class="btn btn-outline-light">Logout</button>
+    </form>
+    <a href="/recapts">Home</a>
+    {{-- <a href="/logout">Logout</a> --}}
+    @else
     <ul class="sidebar-menu do-nicescrol">
      <li class="sidebar-header">MAIN NAVIGATION</li>
      <li>
@@ -21,5 +29,5 @@
     <ul>
       <li><a href="/login">Login</a></li>
     </ul>
-    
+    @endif
   </div>

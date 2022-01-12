@@ -17,7 +17,8 @@ class CreateRecaptsTable extends Migration
             $table->id();
             $table->foreignId('id_user');
             $table->string('keterangan');
-            $table->date('tanggal');
+            $table->integer('mounth');
+            $table->date('date');
             $table->timestamps();
         });
     }
